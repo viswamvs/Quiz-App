@@ -8,7 +8,7 @@ void main() {
         'Hello flutter',
         textDirection: TextDirection.ltr,
         style: TextStyle(
-          color: Colors.lightGreen
+          color: Colors.lightGreen,
           fontWeight: FontWeight.bold,
           fontFamily: 'Times New Roman',
           fontSize: 26,
