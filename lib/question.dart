@@ -15,6 +15,8 @@ class Question extends StatelessWidget {
         textAlign: TextAlign.center,
         style: TextStyle(
           fontSize: 28,
+          fontStyle: FontStyle.italic,
+          fontWeight: FontWeight.bold,
         ),
       ),
     );
