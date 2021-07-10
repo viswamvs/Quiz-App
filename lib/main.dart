@@ -41,19 +41,23 @@ class _MyCoolAppState extends State<MyCoolApp> {
             children: [
               Question(questions[_questionIndex]),
               RaisedButton(
-                child: Text('answer 1'),
+                child: Text('Answer 1'),
                 onPressed: _answerQuestion,
               ),
               RaisedButton(
-                child: Text('answer 2'),
+                child: Text('Answer 2'),
                 onPressed: () => print('Answer 2 chosen'),
               ),
               RaisedButton(
-                  child: Text('answer 3'),
+                  child: Text('Answer 3'),
                   onPressed: () => {
                         //..
                         print('Answer 3 chosen'),
                       }),
+              RaisedButton(
+                child: Text('Answer 4'),
+                onPressed: () => print('Answer 4 Chosen'),
+              )
             ],
           ),
         ),
