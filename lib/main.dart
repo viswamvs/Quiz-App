@@ -16,7 +16,9 @@ class _MyCoolAppState extends State<MyCoolApp> {
   var questions = [
     'What is your favorite animal?',
     'What is your favorite color?',
-    'What is your name?'
+    'What is your favorite food?',
+    'What is your favorite recipe?',
+    'What is your ambition?'
   ];
 
   void _answerQuestion() {
