@@ -5,15 +5,22 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  @override
+  var questionIndex = 0;
+
+  void answerQuestion() {
+    questionIndex = questionIndex + 1;
+    print(questionIndex);
+  }
+
   var questions = [
     'What\'s your favorite color',
     'What\'s your favorite animal'
   ];
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.lightBlueAccent,
         appBar: AppBar(
           centerTitle: true,
           title: Text('Demo App'),
@@ -21,22 +28,25 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(
           children: [
-            Text('question 1'),
+            Text(questions[questionIndex]),
             ElevatedButton(
-              onPressed: null,
+              onPressed: answerQuestion,
               child: Text("Answer 1"),
             ),
             ElevatedButton(
-              onPressed: null,
-              child: Text("Answer 1"),
+              onPressed: () => print('Answer 2 Chosen'),
+              child: Text("Answer 2"),
             ),
             ElevatedButton(
-              onPressed: null,
-              child: Text("Answer 1"),
+              onPressed: () => {
+                //
+                print('Answer 3 Chosen')
+              },
+              child: Text("Answer 3"),
             ),
             ElevatedButton(
-              onPressed: null,
-              child: Text("Answer 1"),
+              onPressed: () => print('Answer 4 Chosen'),
+              child: Text("Answer 4"),
             ),
           ],
         ),
