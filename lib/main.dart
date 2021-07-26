@@ -10,7 +10,8 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.lightBlueAccent,
         appBar: AppBar(
-          title: Text('Hello flutter'),
+          centerTitle: true,
+          title: Text('Demo App'),
           backgroundColor: Colors.lightGreen,
         ),
         body: Center(
