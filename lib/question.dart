@@ -18,6 +18,7 @@ class Question extends StatelessWidget {
           fontFamily: "Times New Roman",
           fontSize: 28.0,
           decorationStyle: TextDecorationStyle.solid,
+          fontWeight: FontWeight.w500,
         ),
         textAlign: TextAlign.center,
       ),
