@@ -14,13 +14,6 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   var _questionIndex = 0;
-
-  void _answerQuestion() {
-    setState(() {
-      _questionIndex = _questionIndex + 1;
-    });
-  }
-
   List questions = [
     {
       'questionText': 'What\'s your favorite color?',
@@ -36,6 +29,12 @@ class _MyAppState extends State<MyApp> {
     },
   ];
 
+  void _answerQuestion() {
+    setState(() {
+      _questionIndex = _questionIndex + 1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -45,17 +44,21 @@ class _MyAppState extends State<MyApp> {
           title: Text('Demo App'),
           backgroundColor: Colors.lightGreen,
         ),
-        body: Column(
-          children: [
-            Question(
-              questions[_questionIndex]["questionText"],
-            ),
-            ...(questions[_questionIndex]['answers'] as List<String>)
-                .map((answers) {
-              return Answer(_answerQuestion, answers);
-            }).toList()
-          ],
-        ),
+        body: _questionIndex < questions.length
+            ? Column(
+                children: [
+                  Question(
+                    questions[_questionIndex]["questionText"],
+                  ),
+                  ...(questions[_questionIndex]['answers'] as List<String>)
+                      .map((answers) {
+                    return Answer(_answerQuestion, answers);
+                  }).toList()
+                ],
+              )
+            : Center(
+                child: Text('You have no more questions '),
+              ),
       ),
     );
   }
