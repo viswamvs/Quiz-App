@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'question.dart';
-import 'answer.dart';
+import './question.dart';
+import './answer.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,18 +21,18 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  var questions = [
+  List questions = [
     {
-      'questionText': 'What\'s your favorite color',
-      'answers': ['Red', 'Blue', 'Green', 'Yellow'],
+      'questionText': 'What\'s your favorite color?',
+      'answers': ['Black', 'Red', 'Green', 'White'],
     },
     {
-      'questionText': 'What\'s your favorite animal',
-      'answers': ['Tiger', 'Giraffee', 'Lion', 'Deer'],
+      'questionText': 'What\'s your favorite animal?',
+      'answers': ['Rabbit', 'Snake', 'Elephant', 'Lion'],
     },
     {
-      'questionText': 'Who\'s your favorite actor',
-      'answers': ['Ajith', 'Vijay', 'Vikram', 'Dhanush'],
+      'questionText': 'Who\'s your favorite instructor?',
+      'answers': ['Max', 'Max', 'Max', 'Max'],
     },
   ];
 
@@ -47,7 +47,9 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: [
-            Question(questions[_questionIndex]["questionText"]),
+            Question(
+              questions[_questionIndex]["questionText"],
+            ),
             Answer(_answerQuestion),
             Answer(_answerQuestion),
             Answer(_answerQuestion),
