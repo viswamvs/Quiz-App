@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import './question.dart';
-import './answer.dart';
+import 'package:helloworld/quiz.dart';
+
+import './quiz.dart';
+import './result.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,7 +16,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   var _questionIndex = 0;
-  List questions = [
+  final List _questions = [
     {
       'questionText': 'What\'s your favorite color?',
       'answers': ['Black', 'Red', 'Green', 'White'],
@@ -24,8 +26,8 @@ class _MyAppState extends State<MyApp> {
       'answers': ['Rabbit', 'Snake', 'Elephant', 'Lion'],
     },
     {
-      'questionText': 'Who\'s your favorite instructor?',
-      'answers': ['Max', 'Max', 'Max', 'Max'],
+      'questionText': 'Who\'s your favorite actor?',
+      'answers': ['Salmaan', 'Aamir', 'Milan', 'Max'],
     },
   ];
 
@@ -41,24 +43,15 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text('Demo App'),
+          title: Text('Quiz App'),
           backgroundColor: Colors.lightGreen,
         ),
-        body: _questionIndex < questions.length
-            ? Column(
-                children: [
-                  Question(
-                    questions[_questionIndex]["questionText"],
-                  ),
-                  ...(questions[_questionIndex]['answers'] as List<String>)
-                      .map((answers) {
-                    return Answer(_answerQuestion, answers);
-                  }).toList()
-                ],
-              )
-            : Center(
-                child: Text('You have no more questions '),
-              ),
+        body: _questionIndex < _questions.length
+            ? Quiz(
+                questions: _questions,
+                answerQuestion: _answerQuestion,
+                questionIndex: _questionIndex)
+            : Result('No more questions'),
       ),
     );
   }
