@@ -17,17 +17,27 @@ class _MyAppState extends State<MyApp> {
   var _questionIndex = 0;
   final List _questions = [
     {
-      'questionText': 'What\'s your favorite color?',
-      'answers': ['Red', 'Black', 'Yellow', 'White']
+      'questionText':
+          'Which planet in our solar system is known as the Red Planet?',
+      'answers': ['Earth', 'Mars', 'Mercury', 'Saturn']
     },
     {
-      'questionText': 'What\'s your favorite animal?',
-      'answers': ['Tiger', 'Lion', 'Bear', 'Giraffe'],
+      'questionText': 'Which country has the most islands in the world?',
+      'answers': ['Bali', 'Maui', 'Vatican', 'Sweden'],
     },
     {
-      'questionText': 'Who\'s your favorite actor?',
-      'answers': ['Salmaan', 'Aamir', 'Milan', 'Max'],
+      'questionText': 'What\'s the national flower of India?',
+      'answers': ['Lotus', 'Sunflower', 'Crossandra', 'Rose'],
     },
+    {
+      'questionText':
+          'In the context to India’s wild life, the flying fox is a?',
+      'answers': ['Bat', 'Vulture', 'Stork', 'Kite'],
+    },
+    {
+      'questionText': 'World Wildlife Day is celebrated at?',
+      'answers': ['25th January', '2nd February', '27th February', '2nd March'],
+    }
   ];
 
   void _answerQuestion() {
